@@ -1,6 +1,6 @@
 package com.vk.api.sdk.client;
 
-import com.vk.api.sdk.queries.EnumParam;
+import static java.util.Arrays.asList;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static java.util.Arrays.asList;
+import com.vk.api.sdk.queries.EnumParam;
 
 /**
  * Query builder for API request
@@ -258,6 +258,10 @@ public abstract class AbstractQueryBuilder<T, R> extends ApiRequest<R> {
      */
     public T unsafeParam(String key, EnumParam value) {
         return unsafeParam(key, value.getValue());
+    }
+
+    public T unsafeParam(String key, Object value) {
+        return unsafeParam(key, getGson().toJson(value));
     }
 
     /**

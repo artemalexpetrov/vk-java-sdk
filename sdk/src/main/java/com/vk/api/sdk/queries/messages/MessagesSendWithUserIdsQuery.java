@@ -1,13 +1,14 @@
 package com.vk.api.sdk.queries.messages;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.vk.api.sdk.client.AbstractQueryBuilder;
 import com.vk.api.sdk.client.Utils;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
+import com.vk.api.sdk.objects.messages.Keyboard;
 import com.vk.api.sdk.objects.messages.MultiSend;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Query for messages.send method
@@ -190,6 +191,10 @@ public class MessagesSendWithUserIdsQuery extends AbstractQueryBuilder<MessagesS
      */
     public MessagesSendWithUserIdsQuery stickerId(Integer value) {
         return unsafeParam("sticker_id", value);
+    }
+
+    public MessagesSendWithUserIdsQuery keyboard(Keyboard keyboard) {
+        return unsafeParam("keyboard", keyboard);
     }
 
 
