@@ -10,7 +10,7 @@ public class ButtonAction {
     private String type = "text";
 
     @SerializedName("payload")
-    private String payload;
+    private ButtonActionPayload payload;
 
     @SerializedName("label")
     private String label;
@@ -18,7 +18,7 @@ public class ButtonAction {
     public ButtonAction() {
     }
 
-    public ButtonAction(String type, String payload, String label) {
+    public ButtonAction(String type, ButtonActionPayload payload, String label) {
         this.type = type;
         this.payload = payload;
         this.label = label;
@@ -42,6 +42,30 @@ public class ButtonAction {
     public int hashCode() {
 
         return Objects.hash(type, payload, label);
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public ButtonActionPayload getPayload() {
+        return payload;
+    }
+
+    public void setPayload(ButtonActionPayload payload) {
+        this.payload = payload;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     @Override
