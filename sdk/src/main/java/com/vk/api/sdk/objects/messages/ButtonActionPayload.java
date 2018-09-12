@@ -2,8 +2,11 @@ package com.vk.api.sdk.objects.messages;
 
 import java.util.Objects;
 
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.adapters.ButtonActionPayloadAdapter;
 
+@JsonAdapter(ButtonActionPayloadAdapter.class)
 public class ButtonActionPayload {
 
     @SerializedName("command")
