@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.vk.api.sdk.adapters.ButtonActionPayloadAdapter;
+import com.vk.api.sdk.adapters.JSONStringAdapter;
 
 public class ButtonAction {
 
@@ -12,7 +12,7 @@ public class ButtonAction {
     private String type = "text";
 
     @SerializedName("payload")
-    @JsonAdapter(ButtonActionPayloadAdapter.class)
+    @JsonAdapter(JSONStringAdapter.class)
     private ButtonActionPayload payload;
 
     @SerializedName("label")
