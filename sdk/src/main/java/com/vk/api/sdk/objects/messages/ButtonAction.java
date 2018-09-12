@@ -2,7 +2,9 @@ package com.vk.api.sdk.objects.messages;
 
 import java.util.Objects;
 
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.adapters.ButtonActionPayloadAdapter;
 
 public class ButtonAction {
 
@@ -10,6 +12,7 @@ public class ButtonAction {
     private String type = "text";
 
     @SerializedName("payload")
+    @JsonAdapter(ButtonActionPayloadAdapter.class)
     private ButtonActionPayload payload;
 
     @SerializedName("label")
