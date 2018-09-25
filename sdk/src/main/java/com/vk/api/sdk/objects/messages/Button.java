@@ -39,6 +39,14 @@ public class Button {
         return Objects.hash(action, buttonColor);
     }
 
+    public ButtonAction getAction() {
+        return action;
+    }
+
+    public ButtonColor getButtonColor() {
+        return buttonColor;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Button{");

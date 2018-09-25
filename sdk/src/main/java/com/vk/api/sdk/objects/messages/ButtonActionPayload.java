@@ -34,6 +34,10 @@ public class ButtonActionPayload {
         return Objects.hash(command);
     }
 
+    public String getCommand() {
+        return command;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("ButtonActionPayload{");
